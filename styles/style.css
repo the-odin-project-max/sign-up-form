@@ -1,0 +1,157 @@
+@font-face {
+	font-family: "norse-bold";
+	src: url("../resources/fonts/Norse-Bold.otf");
+  }
+
+:root {
+	--color: #e6007e;
+	--txt: rgb(185, 185, 185)
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	color: var(--txt);
+
+	/* outline: 1px solid red; */
+}
+
+body {
+	margin: 0;
+}
+
+.left-panel {
+	background: url("../resources/img/background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	float: left;
+	width: 30vw;
+	height: 100vh;
+}
+
+.left-panel-logo {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: end;
+	gap: 1vw;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 25vh 0;
+	padding: max(1vh, 5px);
+}
+
+.logo-img {
+	object-fit: contain;
+	height: max(10vh, 80px);
+}
+
+.logo-name {
+	font-family: norse-bold;
+	color: white;
+	font-size: max(8vh, 60px);
+}
+
+
+
+
+
+.right-panel {
+	float: right;
+	height: 100vh;
+	width: 70vw;
+	background-color: antiquewhite;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5vh;
+}
+
+.dummy-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 3vh;
+	padding-left: 30px;
+}
+
+.form-inputs {
+	background-color: white;
+	box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	gap: 2vh;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	gap: 0.4vh;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.form-inputs h2 {
+	padding: 30px;
+}
+
+
+
+fieldset {
+	border: none;
+	display: flex;
+	flex-direction: row;
+	gap: 2vw;
+	padding-left: 30px;
+}
+
+fieldset:last-child {
+	padding-bottom: 30px;
+}
+
+em {
+	font-style: italic;
+}
+
+input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input::-webkit-input-placeholder {/* Chrome/Opera/Safari/Edge */
+	color: rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+	padding: 10px 30px;
+	background-color: var(--color);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 30px;
+	font-weight: bold;
+	box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:hover {
+	color: var(--color);
+	background-color: white;
+	cursor: pointer;
+}
+
+.existing-customer-text {
+	margin-left: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color);
+	font-style: bold;
+}
