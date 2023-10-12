@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "norse-bold";
 	src: url("../resources/fonts/Norse-Bold.otf");
-  }
+}
 
 :root {
 	--color: #e6007e;
@@ -20,16 +20,27 @@
 
 body {
 	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	flex-wrap: wrap;
 }
 
 .left-panel {
 	background: url("../resources/img/background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;
-	float: left;
+	background-position: center;
+
 	width: 30vw;
 	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .left-panel-logo {
@@ -54,29 +65,37 @@ body {
 	font-size: max(8vh, 60px);
 }
 
+.left-panel p {
+	text-align: center;
+	margin-bottom: 3px;
+}
+
+
 
 
 
 
 .right-panel {
-	float: right;
 	height: 100vh;
 	width: 70vw;
-	background-color: antiquewhite;
+	background-color: rgb(31, 31, 31);
 	color: black;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	gap: 5vh;
+	flex-grow: 2;
 }
 
 .dummy-text {
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
 	gap: 3vh;
 	padding-left: 30px;
+	margin-top: 15px;
 }
 
 .form-inputs {
@@ -97,6 +116,10 @@ body {
 	text-transform: uppercase;
 }
 
+.input:focus {
+	border: #e6007e 1px solid;
+}
+
 .form-inputs h2 {
 	padding: 30px;
 }
@@ -109,6 +132,7 @@ fieldset {
 	flex-direction: row;
 	gap: 2vw;
 	padding-left: 30px;
+	flex-wrap: wrap;
 }
 
 fieldset:last-child {
@@ -123,11 +147,31 @@ input {
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	color: black;
 }
 
-input::-webkit-input-placeholder {/* Chrome/Opera/Safari/Edge */
+.input.invalid::after {
+	content: "*Error";
+	display: block;
+	clear: both;
+	color: red;
+	font-size: 10px;
+	text-transform: none;
+}
+
+input.invalid {
+	border: 1px solid red;
+}
+
+input.valid {
+	border: 1px solid green;
+}
+
+input::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari/Edge */
 	color: rgba(0, 0, 0, 0.2);
 }
+
 
 input[type="submit"] {
 	padding: 10px 30px;
@@ -148,10 +192,35 @@ input[type="submit"]:hover {
 
 .existing-customer-text {
 	margin-left: 30px;
+	margin-bottom: 20px;
 }
 
 a {
 	text-decoration: none;
 	color: var(--color);
 	font-style: bold;
+}
+
+@media screen and (max-width: 990px) {
+	body {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.left-panel {
+		height: 15vh;
+		width: 100vw;
+		flex-basis: 100%;
+		background-size: 100vw;
+	}
+
+	.right-panel {
+		height: auto;
+		width: 100vw;
+		flex-basis: 100%;
+	}
+
+	.credits {
+		display: none;
+	}
 }
