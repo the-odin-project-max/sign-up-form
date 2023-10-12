@@ -150,7 +150,7 @@ input {
 	color: black;
 }
 
-.input.invalid::after {
+.input:has(.invalid)::after {
 	content: "*Error";
 	display: block;
 	clear: both;
